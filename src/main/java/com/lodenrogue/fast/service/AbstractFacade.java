@@ -24,6 +24,10 @@ public abstract class AbstractFacade<T> {
 		return entityManager.create(t);
 	}
 
+	public T update(T t) {
+		return entityManager.update(t);
+	}
+
 	public void delete(long id) {
 		entityManager.delete(id);
 	}

@@ -44,6 +44,15 @@ public class EntityManager<T> {
 		return t;
 	}
 
+	public T update(T t) {
+		Session session = factory.openSession();
+		session.beginTransaction();
+		session.update(t);
+		session.getTransaction().commit();
+		session.clear();
+		return t;
+	}
+
 	public void delete(long id) {
 		Session session = factory.openSession();
 		session.beginTransaction();
